@@ -19,4 +19,8 @@ export class EpisodesService {
         console.log(id);
         return this.episodes.find(episode => episode.id === id )
     }
+
+    findFeatured(){
+        return this.episodes.filter(episode => episode.featured === true)
+    }
 }
