@@ -38,6 +38,6 @@ export class EpisodesController {
     @Post()
     create(@Body() input: any ) {
         console.log(input);
-        return "New Episodes";
+        return this.episodeService.create(input);
     }
 }
