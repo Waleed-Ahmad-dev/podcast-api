@@ -8,7 +8,7 @@ export class EpisodesService {
         return this.episodes
     }
 
-    create(episode: Episode){
+    create( episode: Episode ){
         console.log(episode);
         episode.id = Date.now().toString()
         this.episodes.push(episode)
@@ -26,5 +26,11 @@ export class EpisodesService {
 
     remove( id: string ){
         this.episodes = this.episodes.filter(episode => episode.id !== id);    
+    }
+
+    updare( id: string, updateEpisode: Episode ){
+        console.log(id, updateEpisode);
+        const index = this.episodes.findIndex(episode => episode.id === id);        
+        this.episodes[index] = {...this.episodes[index], ...updateEpisode}
     }
 }
