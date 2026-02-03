@@ -1,4 +1,0 @@
-feat(episodes): add update method
-
-* Introduce update method to modify episodes by id
-* Update episodes array to reflect changes made by update method

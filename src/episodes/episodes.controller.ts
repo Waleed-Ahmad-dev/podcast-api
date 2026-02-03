@@ -26,7 +26,7 @@ export class EpisodesController {
     @Put(':id')
     update(@Body() input: any, @Param('id') id: string){
         console.log(input, id);
-        return "Update Episodes";
+        return this.episodeService.update(id, input)
     }
 
     @Delete(':id')

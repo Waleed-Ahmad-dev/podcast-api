@@ -28,7 +28,7 @@ export class EpisodesService {
         this.episodes = this.episodes.filter(episode => episode.id !== id);    
     }
 
-    updare( id: string, updateEpisode: Episode ){
+    update( id: string, updateEpisode: Episode ){
         console.log(id, updateEpisode);
         const index = this.episodes.findIndex(episode => episode.id === id);        
         this.episodes[index] = {...this.episodes[index], ...updateEpisode}
