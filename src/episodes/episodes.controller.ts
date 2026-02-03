@@ -7,6 +7,11 @@ export class EpisodesController {
         return "All Episodes"
     }
 
+    @Get("featured")
+    findFeatured() {
+        return "Featured Episodes"
+    }
+
     @Post()
     create() {
         return "New Episodes"
