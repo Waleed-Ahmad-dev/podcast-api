@@ -14,7 +14,7 @@ export class EpisodesController {
 
     @Get("featured")
     findFeatured() {
-        return "Featured Episodes";
+        return this.episodeService.findFeatured();
     }
 
     @Get(":id")
