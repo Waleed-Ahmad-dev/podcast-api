@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Episode } from './episode.entity';
+import { CreateEpisodeDto } from './create-episode.dto';
 @Injectable()
 export class EpisodesService {
     private episodes: Episode[] = [];
@@ -8,11 +9,15 @@ export class EpisodesService {
         return this.episodes
     }
 
-    create( episode: Episode ){
-        console.log(episode);
-        episode.id = Date.now().toString()
-        this.episodes.push(episode)
-        return episode
+    create( createEpisodeDto: CreateEpisodeDto ){
+        const newEpisode = {
+        id: Date.now().toString(),
+        ...createEpisodeDto,
+        featured: CreateEpisodeDto.featured || false,
+    };
+
+    this.episodes.push(newEpisode);
+    return newEpisode;
     }
 
     findOne( id: string ){
