@@ -12,5 +12,6 @@ export class EpisodesService {
         console.log(episode);
         episode.id = Date.now().toString()
         this.episodes.push(episode)
+        return episode
     }
 }
