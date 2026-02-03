@@ -32,7 +32,7 @@ export class EpisodesController {
     @Delete(':id')
     delete(@Param('id') id: string){
         console.log(id);
-        return "Delete Episodes";
+        return this.episodeService.remove(id);
     }
 
     @Post()
