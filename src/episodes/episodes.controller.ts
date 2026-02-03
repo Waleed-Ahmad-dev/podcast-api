@@ -29,7 +29,7 @@ export class EpisodesController {
         return "Update Episodes";
     }
 
-    @Delete()
+    @Delete(':id')
     delete(@Param('id') id: string){
         console.log(id);
         return "Delete Episodes";
