@@ -1,5 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
 import { EpisodesService } from './episodes.service';
+import { CreateEpisodeDto } from './create-episode.dto';
 
 @Controller('episodes')
 export class EpisodesController {
@@ -36,7 +37,7 @@ export class EpisodesController {
     }
 
     @Post()
-    create(@Body() input: any ) {
+    create(@Body() input: CreateEpisodeDto ) {
         console.log(input);
         return this.episodeService.create(input);
     }
