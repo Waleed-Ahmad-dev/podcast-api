@@ -18,19 +18,19 @@ export class EpisodesController {
     }
 
     @Get(":id")
-    findOne(@Param() id: string) {
+    findOne(@Param('id') id: string) {
         console.log(id);
         return "One Episode";
     }
 
     @Put(':id')
-    update(@Body() input: any, @Param() id: string){
+    update(@Body() input: any, @Param('id') id: string){
         console.log(input, id);
         return "Update Episodes";
     }
 
     @Delete()
-    delete(@Param() id: string){
+    delete(@Param('id') id: string){
         console.log(id);
         return "Delete Episodes";
     }
