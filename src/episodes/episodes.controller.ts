@@ -1,11 +1,15 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
+import { EpisodesService } from './episodes.service';
 
 @Controller('episodes')
 export class EpisodesController {
+
+    constructor(private readonly episodeService: EpisodesService) {}
+
     @Get()
     findAll(@Query('sort') sort: 'asc' | 'desc' = 'desc' ) {
         console.log(sort);
-        return "All Episodes";
+        return this.episodeService.findAll();
     }
 
     @Get("featured")
