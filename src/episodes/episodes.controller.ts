@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
 
 @Controller('episodes')
 export class EpisodesController {
@@ -17,6 +17,18 @@ export class EpisodesController {
     findOne(@Param() id: string) {
         console.log(id);
         return "One Episode";
+    }
+
+    @Put(':id')
+    update(@Body() input: any, @Param() id: string){
+        console.log(input, id);
+        return "Update Episodes";
+    }
+
+    @Delete()
+    delete(@Param() id: string){
+        console.log(id);
+        return "Delete Episodes";
     }
 
     @Post()
