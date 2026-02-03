@@ -14,4 +14,9 @@ export class EpisodesService {
         this.episodes.push(episode)
         return episode
     }
+
+    findOne(id:string){
+        console.log(id);
+        return this.episodes.find(episode => episode.id === id )
+    }
 }
