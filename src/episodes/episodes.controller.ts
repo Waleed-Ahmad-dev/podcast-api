@@ -20,7 +20,7 @@ export class EpisodesController {
     @Get(":id")
     findOne(@Param('id') id: string) {
         console.log(id);
-        return "One Episode";
+        return this.episodeService.findOne(id)
     }
 
     @Put(':id')
