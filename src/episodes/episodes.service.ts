@@ -15,12 +15,16 @@ export class EpisodesService {
         return episode
     }
 
-    findOne(id:string){
+    findOne( id: string ){
         console.log(id);
         return this.episodes.find(episode => episode.id === id )
     }
 
     findFeatured(){
         return this.episodes.filter(episode => episode.featured === true)
+    }
+
+    remove( id: string ){
+        this.episodes = this.episodes.filter(episode => episode.id !== id);    
     }
 }
