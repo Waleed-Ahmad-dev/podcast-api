@@ -11,13 +11,13 @@ export class EpisodesService {
 
     create( createEpisodeDto: CreateEpisodeDto ){
         const newEpisode = {
-        id: Date.now().toString(),
-        ...createEpisodeDto,
-        featured: CreateEpisodeDto.featured || false,
-    };
+            id: Date.now().toString(),
+            ...createEpisodeDto,
+            featured: createEpisodeDto.featured || false,
+        };
 
-    this.episodes.push(newEpisode);
-    return newEpisode;
+        this.episodes.push(newEpisode);
+        return newEpisode;
     }
 
     findOne( id: string ){
