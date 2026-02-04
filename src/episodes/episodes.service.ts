@@ -1,6 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Episode } from './episode.entity';
 import { CreateEpisodeDto } from './create-episode.dto';
+import { UpdateEpisodeDto } from './update-episode.dto';
 @Injectable()
 export class EpisodesService {
     private episodes: Episode[] = [];
@@ -36,7 +37,7 @@ export class EpisodesService {
         this.episodes = this.episodes.filter(episode => episode.id !== id);    
     }
 
-    update( id: string, updateEpisode: Episode ){
+    update( id: string, updateEpisode: UpdateEpisodeDto ){
         console.log(id, updateEpisode);
         const index = this.episodes.findIndex(episode => episode.id === id);        
         this.episodes[index] = {...this.episodes[index], ...updateEpisode}
