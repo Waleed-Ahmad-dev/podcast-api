@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { Episode } from './episode.entity';
 import { CreateEpisodeDto } from './create-episode.dto';
 @Injectable()
@@ -20,9 +20,12 @@ export class EpisodesService {
         return newEpisode;
     }
 
-    findOne( id: string ){
-        console.log(id);
-        return this.episodes.find(episode => episode.id === id )
+    findOne(id: string) {
+        const episode = this.episodes.find(episode => episode.id === id);
+        if (!episode) {
+            throw new NotFoundException(`Episode with ID ${id} not found`);
+        }
+        return episode;
     }
 
     findFeatured(){
