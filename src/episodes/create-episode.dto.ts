@@ -1,5 +1,13 @@
+import { IsString, IsBoolean, IsOptional } from 'class-validator';
+
 export class CreateEpisodeDto {
+    @IsString()
     name: string;
+
+    @IsString()
     description: string;
-    featured: boolean; 
+
+    @IsBoolean()
+    @IsOptional()
+    featured?: boolean;
 }
