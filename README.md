@@ -1,98 +1,77 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Podcast API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![License](https://img.shields.io/badge/license-Unlicensed-red.svg?style=for-the-badge)
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Project Overview
 
-## Description
+This is a robust backend engineering project designed to demonstrate mastery of **NestJS**, **TypeScript**, and **RESTful architecture**.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Built with scalability and maintainability in mind, this application serves as a comprehensive example of modern **Backend Development**. It showcases best practices in **API Design**, efficient **CRUD Operations**, and the power of **Dependency Injection**. The codebase leverages **Data Transfer Objects (DTOs)** for strict data validation and follows a **Modular Architecture** to ensure clean separation of concerns.
 
-## Project setup
+## Tech Stack
 
-```bash
-$ npm install
-```
+- **Framework:** NestJS
+- **Language:** TypeScript
+- **Runtime:** Node.js
+- **Testing:** Jest
+- **Reactive Programming:** RxJS
+- **Linting & Formatting:** ESLint, Prettier
 
-## Compile and run the project
+## Installation & Running
+
+Follow these steps to set up the project locally.
+
+### 1. Clone the repository
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+git clone <https://github.com/Waleed-Ahmad-dev/podcast-api.git>
+cd podcast-api
 ```
 
-## Run tests
+### 2. Install dependencies
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm install
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+### 3. Run the application
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+# Development mode
+npm run start:dev
+
+# Production mode
+npm run start:prod
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## API Reference
 
-## Resources
+The API follows RESTful conventions. Below is a detailed list of the available endpoints.
 
-Check out a few resources that may come in handy when working with NestJS:
+| Method   | Endpoint             | Description                                                                                                         |
+| :------- | :------------------- | :------------------------------------------------------------------------------------------------------------------ |
+| `GET`    | `/episodes`          | Retrieve a list of all episodes. Supports optional sorting via query parameter (e.g., `?sort=asc` or `?sort=desc`). |
+| `GET`    | `/episodes/featured` | Retrieve a list of featured episodes.                                                                               |
+| `POST`   | `/episodes`          | Create a new episode. Payload must adhere to the `CreateEpisodeDto`.                                                |
+| `GET`    | `/episodes/:id`      | Retrieve the details of a specific episode by its unique ID.                                                        |
+| `PUT`    | `/episodes/:id`      | Update an existing episode by its unique ID. Payload supports partial updates via `UpdateEpisodeDto`.               |
+| `DELETE` | `/episodes/:id`      | Remove an episode from the system by its unique ID.                                                                 |
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+## Project Structure
 
-## Support
+This project adopts the standard NestJS modular architecture:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- **Modules:** The application is divided into feature modules (e.g., `EpisodesModule`) to organize code by domain.
+- **Controllers:** Responsible for handling incoming requests and returning responses (`EpisodesController`).
+- **Services:** Contain the business logic and interact with the data layer (`EpisodesService`).
+- **DTOs:** Define the shape of data for creating and updating resources, ensuring type safety and validation (`CreateEpisodeDto`, `UpdateEpisodeDto`).
 
-## Stay in touch
+## Future Roadmap
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+The following features are planned for future releases to further enhance the application:
 
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+- **Database Integration:** Implement persistent storage using **PostgreSQL** and **TypeORM**.
+- **API Documentation:** Integrate **Swagger (OpenAPI)** for interactive API documentation and testing.
