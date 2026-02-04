@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
 import { EpisodesService } from './episodes.service';
 import { CreateEpisodeDto } from './create-episode.dto';
+import { UpdateEpisodeDto } from './update-episode.dto';
 
 @Controller('episodes')
 export class EpisodesController {
@@ -25,7 +26,7 @@ export class EpisodesController {
     }
 
     @Put(':id')
-    update(@Body() input: any, @Param('id') id: string){
+    update(@Body() input: UpdateEpisodeDto, @Param('id') id: string){
         console.log(input, id);
         return this.episodeService.update(id, input)
     }
